@@ -1,9 +1,9 @@
-package exercicio_01_01;
+package exercicio.exercicio_01_01;
 
 /* 
  * Faça uma classe chamada Exercicio1 para ler o nome completo de 
  * uma pessoa e imprimir o primeiro e último nomes 
- * – o nome completo deve ter pelo menos dois nomes  
+ * - o nome completo deve ter pelo menos dois nomes  
  */
 
 import java.io.BufferedReader;
@@ -23,10 +23,14 @@ public class Exercicio_1 {
 	}
 
 	private static void SeparaNomes(String nomeCompleto) {
-		String [] nome = nomeCompleto.split(" "); 
-		System.out.println("");
-		System.out.println(" - Primeiro Nome:  " + nome[0]);
-		System.out.println(" - Último Nome:  " + nome[nome.length - 1]);
+		String [] nome = nomeCompleto.split(" ");
+		System.out.println();
+		if (nome.length < 2) {
+			System.out.println(" - Atenção: O nome completo deve conter pelo menos 2 nomes.");
+		} else {
+			System.out.println(" - Primeiro Nome:  " + nome[0]);
+			System.out.println(" - Último Nome:  " + nome[nome.length - 1]);
+		}
 	}
 
 }

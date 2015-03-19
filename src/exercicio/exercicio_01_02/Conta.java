@@ -1,8 +1,8 @@
-package exercicio_01_02;
+package exercicio.exercicio_01_02;
 
 /*
  * Crie a classe Conta conforme apresentado em sala 
- * – atributos ( numero e saldo )
+ * - atributos ( numero e saldo )
  * - métodos ( creditar , debitar , getSaldo , getNumero ) 
  */
 
@@ -22,6 +22,5 @@ public class Conta {
 	public void debitar(double valor) {
 		this.saldo = this.saldo - valor;
 	}
-	
 	
 }
