@@ -11,9 +11,21 @@ package prova.prova_01_01;
  * linhas. Por exemplo, se os valores dos String da entrada forem
  * “123abc123”, “asd2675hsd1887asd565askvLOL900xD99” e “wdd678mdf898”, a
  * resposta deve ser 7948, que é a soma de 246 (123+123) com 6126
- * (267+1887+565+900+99) e 1576 (678+898).
+ * (2675+1887+565+900+99) e 1576 (678+898).
  */
 
-public class questao_01 {
-
+public class Questao_01 {
+	
+	public int somaSalario(String[] tupla) {
+		int soma = 0;
+		for(int i = 0; i < tupla.length; i++){
+			String[] linha = tupla[i].split("[a-zA-Z]");
+			for(int j = 0; j < linha.length; j++){
+				if (!linha[j].equals("")) {
+					soma = soma + Integer.parseInt(linha[j]);
+				}
+			}
+		}
+		return soma;
+	}
 }

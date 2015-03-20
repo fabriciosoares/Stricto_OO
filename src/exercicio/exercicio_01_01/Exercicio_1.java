@@ -23,7 +23,7 @@ public class Exercicio_1 {
 	}
 
 	private static void SeparaNomes(String nomeCompleto) {
-		String [] nome = nomeCompleto.split(" ");
+		String[] nome = nomeCompleto.split(" ");
 		System.out.println();
 		if (nome.length < 2) {
 			System.out.println(" - Atenção: O nome completo deve conter pelo menos 2 nomes.");
