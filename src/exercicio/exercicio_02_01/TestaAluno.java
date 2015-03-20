@@ -18,8 +18,8 @@ public class TestaAluno {
 	
 	public static void main(String[] args) throws IOException {
 		
-		final Aluno aluno;
-		final Curso curso;
+		Aluno aluno;
+		Curso curso;
 		
 	    InputStreamReader in = new InputStreamReader(System.in);
 	    BufferedReader br = new BufferedReader(in);
@@ -29,19 +29,19 @@ public class TestaAluno {
 	    System.out.println("");
 		
 		System.out.print(" - Digite o nome completo do Aluno: ");
-	    final String nomeAluno = br.readLine();
+	    String nomeAluno = br.readLine();
 	    
 		System.out.print(" - Digite o cpf do Aluno: ");
-	    final String cpfAluno = br.readLine();
+	    String cpfAluno = br.readLine();
 
 	    System.out.print(" - Digite a idade do Aluno: ");
-	    final int idadeAluno =  Integer.parseInt(br.readLine());
+	    int idadeAluno =  Integer.parseInt(br.readLine());
 	    
 		System.out.print(" - Digite o codigo do Curso: ");
-	    final int codigoCurso =  Integer.parseInt(br.readLine());    
+	    int codigoCurso =  Integer.parseInt(br.readLine());    
 	    
 		System.out.print(" - Digite o nome do Curso: ");
-	    final String nomeCurso = br.readLine();    
+	    String nomeCurso = br.readLine();    
 
 	    curso = new Curso(codigoCurso, nomeCurso);
 	    aluno = new Aluno(nomeAluno, cpfAluno, idadeAluno, curso);

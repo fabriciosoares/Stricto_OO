@@ -10,6 +10,7 @@ package br.ufpe.cin.livraria;
  *  	II. titulo – String com o título da mídia;
  *  	III. autores – array de String com o nome dos autores da mídia;
  *  	IV. estoque – inteiro com a quantidade de mídias em estoque;
+ *  
  *  b. O construtor da classe recebe o código da mídia, o título e o array de autores. Toda
  *  mídia é cadastrada com valor de estoque igual a zero, indicando que ainda não existe um 
  *  exemplar da mídia em estoque.
@@ -29,4 +30,45 @@ package br.ufpe.cin.livraria;
 
 public class Midia {
 
+	private String codigo;
+	private String titulo;
+	private String[] autores;
+	private int estoque;
+	
+	//Método Construtor
+	public Midia(String codigo, String titulo, String[] autores) {
+		super();
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.autores = autores;
+		this.estoque = 0;
+	}
+	
+	//Gets e Sets	
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	//Outros Métodos
+	public String toString() {
+		String tela;
+		tela = " - Codigo: " + this.codigo + "\n - Título: " + this.titulo;
+		for(int i = 0; i < this.autores.length; i++) {
+			tela = tela + "\n - Autor " + (i + 1) + ": " + autores[i];
+		}
+		tela = tela + "\n - Qtd Estoque: " + this.estoque;
+		return tela;
+	}
+	
+	public void adicionarEstoque(int acrescimo) {
+		this.estoque = this.estoque + acrescimo;
+	}
+	
+	public void subtrairEstoque(int decrescimo) {
+		this.estoque = this.estoque - decrescimo;
+	}
 }
