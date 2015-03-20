@@ -43,6 +43,7 @@ public class Midia {
 		this.autores = autores;
 		this.estoque = 0;
 	}
+	public Midia(){};
 	
 	//Gets e Sets	
 	public String getCodigo() {
