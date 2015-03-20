@@ -1,8 +1,9 @@
-package prova.prova_01_02;
+package br.ufpe.cin.livraria;
+
 
 /* 2) Uma livraria deseja desenvolver um sistema para cadastrar todos os livros comercializados
  * pela empresa. O sistema deve conter uma classe chamada br.ufpe.cin.livraria.Midia, utilizada
- *  para representar os livros, com as seguintes características:
+ * para representar os livros, com as seguintes características:
  *  
  *  a. Possui os atributos:
  *  	I. codigo – String com o código da mídia;
@@ -26,6 +27,6 @@ package prova.prova_01_02;
  *  f. Implemente os métodos get e set apenas para o atributo codigo.
  */  
 
-public class Questao_02 {
+public class Midia {
 
 }
