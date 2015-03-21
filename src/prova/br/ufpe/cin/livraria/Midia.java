@@ -1,4 +1,4 @@
-package br.ufpe.cin.livraria;
+package prova.br.ufpe.cin.livraria;
 
 
 /* 2) Uma livraria deseja desenvolver um sistema para cadastrar todos os livros comercializados

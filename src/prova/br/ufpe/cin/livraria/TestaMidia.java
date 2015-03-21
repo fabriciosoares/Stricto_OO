@@ -1,4 +1,4 @@
-package br.ufpe.cin.livraria;
+package prova.br.ufpe.cin.livraria;
 
 public class TestaMidia {
 

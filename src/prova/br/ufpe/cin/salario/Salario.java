@@ -1,4 +1,4 @@
-package prova.prova_01_01;
+package prova.br.ufpe.cin.salario;
 
 /*  
  * 1) Os dados das folhas de pagamento dos funcionários de uma empresa foram 
@@ -14,7 +14,7 @@ package prova.prova_01_01;
  * (2675+1887+565+900+99) e 1576 (678+898).
  */
 
-public class Questao_01 {
+public class Salario {
 	
 	public int somaSalario(String[] tupla) {
 		int soma = 0;
