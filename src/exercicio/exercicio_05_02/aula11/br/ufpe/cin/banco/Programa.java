@@ -1,5 +1,7 @@
 package exercicio.exercicio_05_02.aula11.br.ufpe.cin.banco;
 
+import java.io.IOException;
+
 /*
  * Defina as classes:
  * 
@@ -37,7 +39,7 @@ package exercicio.exercicio_05_02.aula11.br.ufpe.cin.banco;
 
 public class Programa {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Conta conta1 = new Conta("1234", 100.0);
 		Conta conta2 = new Conta("1357", 150.0);
 		Conta conta3 = new Conta("2468", 230.0);
@@ -61,6 +63,36 @@ public class Programa {
 				": R$ " + banco.getSaldo(conta2));
 		System.out.println(" - Saldo da Conta " + conta3.getNumero() +
 				": R$ " + banco.getSaldo(conta3));
+		
+		System.out.println();
+		System.out.println("**************************");
+		System.out.println();
+		
+		Conta conta4 = new Poupanca("0987");
+		Conta conta5 = new ContaEspecial("9753", 570.00);
+		
+		banco.cadastrar(conta4);
+		banco.creditar(conta4, 200.00);
+		banco.renderJuros("0987", 2.3);
+		
+		banco.cadastrar(conta5);
+//		banco.renderBonus("0987", 180.00);
+		banco.renderBonus("9753", 145.00);
+		
+		banco.transferir("2468", "0987", 57.00);
+		
+		System.out.println(" - Saldo da Conta " + conta3.getNumero() +
+				": R$ " + banco.getSaldo(conta3));	
+		System.out.println(" - Saldo da Poupança " + conta4.getNumero() +
+				": R$ " + banco.getSaldo(conta4));
+		System.out.println(" - Saldo da ContaEspecial " + conta5.getNumero() +
+				": R$ " + banco.getSaldo(conta5));
+		
+		System.out.println();
+		
+		System.out.println(" - Bonus da ContaEspecial " + conta5.getNumero() +
+				": R$ " + ((ContaEspecial) conta5).getBonus());
+		
 	}
 
 }
