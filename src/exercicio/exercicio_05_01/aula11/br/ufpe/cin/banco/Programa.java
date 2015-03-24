@@ -32,7 +32,6 @@ package exercicio.exercicio_05_01.aula11.br.ufpe.cin.banco;
  *    
  * * aula11.br.ufpe.cin.banco.Programa com um método main que 
  *    testa os metodos da classe Banco pelo menos três vezes.
- *    
  */
 
 public class Programa {
