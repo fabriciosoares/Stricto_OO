@@ -5,7 +5,7 @@ public class Conta {
 	private String numero;
 	private double saldo;
 	
-	// Metodos Construtores
+	// Métodos Construtores
 	public Conta(String numero, double saldo) {
 		super();
 		this.numero = numero;
@@ -15,9 +15,12 @@ public class Conta {
 		this(numero, 0.0);
 	}
 	
-	// Metodos Gets
+	// Métodos Gets
 	public String getNumero() { return numero; }
 	public double getSaldo() { return saldo; }
+	
+	// Métodos Sets
+	public void setSaldo(double saldo) { this.saldo = saldo; }	
 	
 	// Outros Metodos
 	public void creditar(double valor) { 

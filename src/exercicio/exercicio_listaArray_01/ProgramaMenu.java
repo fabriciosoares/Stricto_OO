@@ -1,8 +1,6 @@
 package exercicio.exercicio_listaArray_01;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Scanner;
 
 /*
@@ -39,10 +37,7 @@ public class ProgramaMenu {
 		int contador = 1;
 		String numero;
 		double valor;
-		NumberFormat numberFormat = NumberFormat.getCurrencyInstance();  
-		DecimalFormat df = new DecimalFormat("0.00");  
-		double valorFormatado;
-		
+
 		while (contador > 0) {
 			System.out.println("****************************");
 			System.out.println("***   SISTEMA BANCARIO   ***");
@@ -66,27 +61,27 @@ public class ProgramaMenu {
 					System.out.print(" - Digite o número da conta para cadastrar:  ");
 					numero = s.next();
 					arrayConta[contador] = new Conta(numero);
-					for(int i = 0; i < 25; i++) {
+					for (int i = 0; i < 25; i++) {
 						System.out.println();
 					}
 				    System.out.println("*** Conta " + arrayConta[contador].getNumero() + " cadastrada com sucesso (Saldo: R$ " + arrayConta[contador].getSaldo() + ")");
-					System.out.println();
+				    contador++;
+				    System.out.println();
 				    break;
 				case(2):
 					System.out.print(" - Digite o número da conta para crédito:  ");
 					numero = s.next();
-					for(int i = 1; i <= contador - 1; i++) {
+					for (int i = 1; i < contador; i++) {
 						if (arrayConta[i].getNumero().equals(numero)) {
 							System.out.print(" - Digite o valor para crédito (só será computado até a 2a casa decimal):  R$ ");
 							valor = s.nextDouble();
-							valorFormatado = numberFormat.format(Double.parseDouble(valor));
-						//	System.out.println(valorFormatado);
-						//	System.out.println(Double.parseDouble(valorFormatado));
-							arrayConta[contador].creditar(valorFormatado);
+							arrayConta[i].creditar(valor);
 							for(int j = 0; j < 25; j++) {
 								System.out.println();
 							}
-						    System.out.println("*** Crédito Confirmado na Conta " + arrayConta[contador].getNumero() + " (Saldo: R$ " + arrayConta[contador].getSaldo() + ")");
+						    System.out.print("*** Crédito Confirmado na Conta " + arrayConta[i].getNumero() + " ( Saldo: R$ ");
+						    System.out.printf("%.2f", arrayConta[i].getSaldo());
+						    System.out.println(" )");
 							System.out.println();
 							break;
 						}
@@ -94,23 +89,58 @@ public class ProgramaMenu {
 						System.out.println();
 					}
 					break;
-//				case(3):
-//					System.out.print(" - Digite o número da conta para dédito:  ");
-//					numero = s.next();
-//					System.out.println(" - Digite o valor para dédito (só seré computado até a 2a casa decimal):  R$ ");
-//					valor = s.nextDouble();
-//					valorFormatado = df.format(valor);
-//					arrayConta[contador] = new Conta(numero);
-//					arrayConta[contador].debitar(Double.parseDouble(valorFormatado));
-	//				for(int i = 0; i < 25; i++) {
-//						System.out.println();
-//					}
-//				    System.out.println("*** Dédito Confirmado na Conta " + arrayConta[contador].getNumero() + " (Saldo: R$ " + arrayConta[contador].getSaldo() + ")");
-//					System.out.println();
-//				    break;
-//				case(4):
-					// pede dados para creditar em uma conta
-//					break;
+				case(3):
+					System.out.print(" - Digite o número da conta para débito:  ");
+					numero = s.next();
+					for (int i = 1; i < contador; i++) {
+						if (arrayConta[i].getNumero().equals(numero)) {
+							System.out.print(" - Digite o valor para débito (só será computado até a 2a casa decimal):  R$ ");
+							valor = s.nextDouble();
+							arrayConta[i].debitar(valor);
+							for(int j = 0; j < 25; j++) {
+								System.out.println();
+							}
+						    System.out.print("*** Débito Confirmado na Conta " + arrayConta[i].getNumero() + " ( Saldo: R$ ");
+						    System.out.printf("%.2f", arrayConta[i].getSaldo());
+						    System.out.println(" )");
+							System.out.println();
+							break;
+						}
+						System.out.println("*** Número da Conta Errado! Favor Digitar Novamente.  ");
+						System.out.println();
+					}
+					break;
+				case(4):
+					System.out.print(" - Digite o número da conta para débitar a transferência:  ");
+					numero = s.next();
+					for (int i = 1; i < contador; i++) {
+						if (arrayConta[i].getNumero().equals(numero)) {
+							System.out.print(" - Digite o valor da transferência (só será computado até a 2a casa decimal):  R$ ");
+							valor = s.nextDouble();
+							System.out.println(" - Digite o número da conta para creditar a transferência:  ");
+							String numeroCredito;
+							numeroCredito = s.next();
+							for (int k = 0; k < contador; k++) {
+								if (arrayConta[k].getNumero().equals(numeroCredito)) {
+									arrayConta[i].debitar(valor);
+									arrayConta[k].creditar(valor);
+								}
+								for(int j = 0; j < 25; j++) {
+									System.out.println();
+								}
+							    System.out.println("*** Transferência Confirmado:  ");
+							    System.out.print("         - Conta Debitada " + arrayConta[i].getNumero() + " ( Saldo: R$ ");
+							    System.out.printf("%.2f", arrayConta[i].getSaldo());
+							    System.out.print("         + Conta Creditada " + arrayConta[k].getNumero() + " ( Saldo: R$ ");
+							    System.out.printf("%.2f", arrayConta[i].getSaldo());
+							    System.out.println(" )");
+								System.out.println();
+							}
+							break;
+						}
+						System.out.println("*** Número da Conta Errado! Favor Digitar Novamente.  ");
+						System.out.println();
+					}
 //				case(5):
 // pede dados para creditar em uma conta
 //					break;

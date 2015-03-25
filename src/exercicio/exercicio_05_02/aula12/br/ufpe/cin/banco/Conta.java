@@ -1,4 +1,4 @@
-package exercicio.exercicio_05_02.aula11.br.ufpe.cin.banco;
+package exercicio.exercicio_05_02.aula12.br.ufpe.cin.banco;
 
 /*
  * Defina os dois construtores da classe Conta conforme mostrado na aula de hoje 

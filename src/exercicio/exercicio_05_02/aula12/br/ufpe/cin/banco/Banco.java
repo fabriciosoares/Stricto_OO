@@ -1,4 +1,4 @@
-package exercicio.exercicio_05_02.aula11.br.ufpe.cin.banco;
+package exercicio.exercicio_05_02.aula12.br.ufpe.cin.banco;
 
 public class Banco {
 
