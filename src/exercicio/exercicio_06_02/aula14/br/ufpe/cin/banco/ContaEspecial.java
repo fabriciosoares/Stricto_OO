@@ -11,12 +11,12 @@ public class ContaEspecial extends Conta {
 	
 	// Getters
 	public double getBonus() {
-		return bonus;
+		return this.bonus;
 	}
 	
 	public void renderBonus(double credito) {
 		super.creditar(credito);
-		bonus = bonus + (credito * 0.01);
+		this.bonus = this.bonus + (credito * 0.01);
 	}
 
 }

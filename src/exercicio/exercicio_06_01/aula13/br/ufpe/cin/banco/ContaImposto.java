@@ -11,7 +11,6 @@ public class ContaImposto extends ContaAbstrata {
 		CPMF = 0.01;
 	}
 
-	@Override
 	public void debitar(double valor) {
 		super.setSaldo(super.getSaldo() - valor - (valor * CPMF));
 	}

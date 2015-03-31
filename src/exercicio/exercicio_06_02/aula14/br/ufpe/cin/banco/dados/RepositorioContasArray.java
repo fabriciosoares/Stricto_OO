@@ -12,13 +12,11 @@ public class RepositorioContasArray implements RepositorioContas {
 		this.indice = 0;
 	}
 	
-	@Override
 	public void inserir(ContaAbstrata conta) {
 		this.contas[this.indice] = conta;
 		this.indice++;
 	}
 
-	@Override
 	public ContaAbstrata procurar(String numero) {
 		boolean achou = false;
 		ContaAbstrata contaProcurada = null;
@@ -36,7 +34,6 @@ public class RepositorioContasArray implements RepositorioContas {
 		}
 	}
 
-	@Override
 	public void remover(String numero) {
 		int apaga = 0;
 		for (int i = 0; i < this.indice; i++) {
@@ -51,7 +48,6 @@ public class RepositorioContasArray implements RepositorioContas {
 		}
 	}
 
-	@Override
 	public void atualizar(ContaAbstrata conta) {
 		boolean achou = false;
 		for(int i = 0; i < this.indice && achou == false; i++) {
@@ -62,7 +58,6 @@ public class RepositorioContasArray implements RepositorioContas {
 		}
 	}
 
-	@Override
 	public boolean existe(String numero) {
 		boolean achou = false;
 		for(int i = 0; i < this.indice; i++) {
